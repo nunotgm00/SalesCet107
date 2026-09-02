@@ -12,6 +12,9 @@ namespace SalesCet107.Web
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            //Add runtime compilation
+            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
             builder.Services.AddDbContext<DataContext>(o =>
             {
                 o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
